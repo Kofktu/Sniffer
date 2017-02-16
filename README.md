@@ -3,6 +3,8 @@
 > Automatic networking activity logger
 > intercepting any outgoing requests and incoming responses for debugging purposes.
 
+![alt tag](Screenshot/Sample.png)
+
 ## Requirements
 - iOS 8.0+
 - Swift 3.0
