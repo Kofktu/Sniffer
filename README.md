@@ -59,6 +59,10 @@ Sniffer.register(deserializer: CustomTextBodyDeserializer(), for: ["text/plain"]
 
 ```
 
+## References
+- Timberjack (https://github.com/andysmart/Timberjack)
+- ResponseDetective (https://github.com/netguru/ResponseDetective)
+
 ## Authors
 
 Taeun Kim (kofktu), <kofktu@gmail.com>
