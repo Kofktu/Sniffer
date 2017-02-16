@@ -34,7 +34,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-#### for URLSessionConfigure
+#### for URLSessionConfiguration
 
 ```swift
 let configuration = URLSessionConfiguration.default
