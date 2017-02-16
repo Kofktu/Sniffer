@@ -18,16 +18,6 @@ Pod::Spec.new do |s|
   s.name         = "Sniffer"
   s.version      = "1.0.0"
   s.summary      = "Automatic network activity logger for Swift"
-
-  # This description is used to generate tags and improve search results.
-  #   * Think: What does it do? Why did you write it? What is the focus?
-  #   * Try to keep it short, snappy and to the point.
-  #   * Write the description between the DESC delimiters below.
-  #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-                   Automatic network activity logger for iOS
-                   DESC
-
   s.homepage     = "https://github.com/Kofktu/Sniffer"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
@@ -91,7 +81,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes/**/*.{swift}"
+  s.source_files  = "Sniffer/Classes/**/*.{swift}"
   # s.source_files  = "Classes", "Classes/**/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
