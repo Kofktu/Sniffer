@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C30E56FB1E541B9200B4C345 /* Sniffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30E56F11E541B9200B4C345 /* Sniffer.framework */; };
+		C30E57001E541B9200B4C345 /* SnifferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E56FF1E541B9200B4C345 /* SnifferTests.swift */; };
+		C30E57021E541B9200B4C345 /* Sniffer.h in Headers */ = {isa = PBXBuildFile; fileRef = C30E56F41E541B9200B4C345 /* Sniffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C30E570D1E541BC900B4C345 /* Sniffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E570C1E541BC900B4C345 /* Sniffer.swift */; };
+		C30E570E1E5424BE00B4C345 /* Sniffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E570C1E541BC900B4C345 /* Sniffer.swift */; };
+		C356DDE51E555D6E00DF7467 /* BodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356DDE41E555D6E00DF7467 /* BodyDeserializer.swift */; };
+		C356DDE61E555FE500DF7467 /* BodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356DDE41E555D6E00DF7467 /* BodyDeserializer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C30E56FC1E541B9200B4C345 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C30E56E81E541B9200B4C345 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C30E56F01E541B9200B4C345;
+			remoteInfo = Sniffer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		43AA4FCCCB0E2B40D520FA8B /* Pods_Sniffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sniffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E1E01E2A4D9DEF0685763FD /* Pods-SnifferTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnifferTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnifferTests/Pods-SnifferTests.release.xcconfig"; sourceTree = "<group>"; };
+		987FCBEDD9BE7C35A2C04184 /* Pods_SnifferTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnifferTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AB14D53DD03F2910C49A54B /* Pods-Sniffer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sniffer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sniffer/Pods-Sniffer.debug.xcconfig"; sourceTree = "<group>"; };
+		C30E56F11E541B9200B4C345 /* Sniffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sniffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C30E56F41E541B9200B4C345 /* Sniffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sniffer.h; sourceTree = "<group>"; };
+		C30E56F51E541B9200B4C345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C30E56FA1E541B9200B4C345 /* SnifferTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnifferTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C30E56FF1E541B9200B4C345 /* SnifferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnifferTests.swift; sourceTree = "<group>"; };
+		C30E57011E541B9200B4C345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C30E570C1E541BC900B4C345 /* Sniffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sniffer.swift; sourceTree = "<group>"; };
+		C356DDE41E555D6E00DF7467 /* BodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyDeserializer.swift; sourceTree = "<group>"; };
+		EA2941A3518BBB1366BA61EB /* Pods-SnifferTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnifferTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnifferTests/Pods-SnifferTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F72D47C694CC1641E6C47660 /* Pods-Sniffer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sniffer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sniffer/Pods-Sniffer.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C30E56ED1E541B9200B4C345 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C30E56F71E541B9200B4C345 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C30E56FB1E541B9200B4C345 /* Sniffer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A80270559E75AB6E23C869D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9AB14D53DD03F2910C49A54B /* Pods-Sniffer.debug.xcconfig */,
+				F72D47C694CC1641E6C47660 /* Pods-Sniffer.release.xcconfig */,
+				EA2941A3518BBB1366BA61EB /* Pods-SnifferTests.debug.xcconfig */,
+				5E1E01E2A4D9DEF0685763FD /* Pods-SnifferTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BBC338B95C0E4433B5615C77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43AA4FCCCB0E2B40D520FA8B /* Pods_Sniffer.framework */,
+				987FCBEDD9BE7C35A2C04184 /* Pods_SnifferTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C30E56E71E541B9200B4C345 = {
+			isa = PBXGroup;
+			children = (
+				C30E56F31E541B9200B4C345 /* Sniffer */,
+				C30E56FE1E541B9200B4C345 /* SnifferTests */,
+				C30E56F21E541B9200B4C345 /* Products */,
+				A80270559E75AB6E23C869D1 /* Pods */,
+				BBC338B95C0E4433B5615C77 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C30E56F21E541B9200B4C345 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C30E56F11E541B9200B4C345 /* Sniffer.framework */,
+				C30E56FA1E541B9200B4C345 /* SnifferTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C30E56F31E541B9200B4C345 /* Sniffer */ = {
+			isa = PBXGroup;
+			children = (
+				C30E570B1E541BBD00B4C345 /* Classes */,
+				C30E56F41E541B9200B4C345 /* Sniffer.h */,
+				C30E56F51E541B9200B4C345 /* Info.plist */,
+			);
+			path = Sniffer;
+			sourceTree = "<group>";
+		};
+		C30E56FE1E541B9200B4C345 /* SnifferTests */ = {
+			isa = PBXGroup;
+			children = (
+				C30E56FF1E541B9200B4C345 /* SnifferTests.swift */,
+				C30E57011E541B9200B4C345 /* Info.plist */,
+			);
+			path = SnifferTests;
+			sourceTree = "<group>";
+		};
+		C30E570B1E541BBD00B4C345 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C30E570C1E541BC900B4C345 /* Sniffer.swift */,
+				C356DDE41E555D6E00DF7467 /* BodyDeserializer.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C30E56EE1E541B9200B4C345 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C30E57021E541B9200B4C345 /* Sniffer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C30E56F01E541B9200B4C345 /* Sniffer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C30E57051E541B9200B4C345 /* Build configuration list for PBXNativeTarget "Sniffer" */;
+			buildPhases = (
+				C30E56EC1E541B9200B4C345 /* Sources */,
+				C30E56ED1E541B9200B4C345 /* Frameworks */,
+				C30E56EE1E541B9200B4C345 /* Headers */,
+				C30E56EF1E541B9200B4C345 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sniffer;
+			productName = Sniffer;
+			productReference = C30E56F11E541B9200B4C345 /* Sniffer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C30E56F91E541B9200B4C345 /* SnifferTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C30E57081E541B9200B4C345 /* Build configuration list for PBXNativeTarget "SnifferTests" */;
+			buildPhases = (
+				C30E56F61E541B9200B4C345 /* Sources */,
+				C30E56F71E541B9200B4C345 /* Frameworks */,
+				C30E56F81E541B9200B4C345 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C30E56FD1E541B9200B4C345 /* PBXTargetDependency */,
+			);
+			name = SnifferTests;
+			productName = SnifferTests;
+			productReference = C30E56FA1E541B9200B4C345 /* SnifferTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C30E56E81E541B9200B4C345 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Kofktu;
+				TargetAttributes = {
+					C30E56F01E541B9200B4C345 = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					C30E56F91E541B9200B4C345 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C30E56EB1E541B9200B4C345 /* Build configuration list for PBXProject "Sniffer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C30E56E71E541B9200B4C345;
+			productRefGroup = C30E56F21E541B9200B4C345 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C30E56F01E541B9200B4C345 /* Sniffer */,
+				C30E56F91E541B9200B4C345 /* SnifferTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C30E56EF1E541B9200B4C345 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C30E56F81E541B9200B4C345 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C30E56EC1E541B9200B4C345 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C356DDE51E555D6E00DF7467 /* BodyDeserializer.swift in Sources */,
+				C30E570D1E541BC900B4C345 /* Sniffer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C30E56F61E541B9200B4C345 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C30E57001E541B9200B4C345 /* SnifferTests.swift in Sources */,
+				C30E570E1E5424BE00B4C345 /* Sniffer.swift in Sources */,
+				C356DDE61E555FE500DF7467 /* BodyDeserializer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C30E56FD1E541B9200B4C345 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C30E56F01E541B9200B4C345 /* Sniffer */;
+			targetProxy = C30E56FC1E541B9200B4C345 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C30E57031E541B9200B4C345 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C30E57041E541B9200B4C345 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C30E57061E541B9200B4C345 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AB14D53DD03F2910C49A54B /* Pods-Sniffer.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sniffer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kofktu.Sniffer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C30E57071E541B9200B4C345 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F72D47C694CC1641E6C47660 /* Pods-Sniffer.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Sniffer/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kofktu.Sniffer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C30E57091E541B9200B4C345 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA2941A3518BBB1366BA61EB /* Pods-SnifferTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SnifferTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kofktu.SnifferTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C30E570A1E541B9200B4C345 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E1E01E2A4D9DEF0685763FD /* Pods-SnifferTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SnifferTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kofktu.SnifferTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C30E56EB1E541B9200B4C345 /* Build configuration list for PBXProject "Sniffer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C30E57031E541B9200B4C345 /* Debug */,
+				C30E57041E541B9200B4C345 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C30E57051E541B9200B4C345 /* Build configuration list for PBXNativeTarget "Sniffer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C30E57061E541B9200B4C345 /* Debug */,
+				C30E57071E541B9200B4C345 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C30E57081E541B9200B4C345 /* Build configuration list for PBXNativeTarget "SnifferTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C30E57091E541B9200B4C345 /* Debug */,
+				C30E570A1E541B9200B4C345 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C30E56E81E541B9200B4C345 /* Project object */;
+}
