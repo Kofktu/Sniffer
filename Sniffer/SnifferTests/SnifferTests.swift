@@ -7,30 +7,66 @@
 //
 
 import XCTest
+
 @testable import Sniffer
 
 class SnifferTests: XCTestCase {
+    let configuration = URLSessionConfiguration.default
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        Sniffer.enable(in: configuration)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testGetRequest() {
+        let session = URLSession(configuration: configuration)
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        var urlRequest = URLRequest(url: URL(string: "https://httpbin.org/get")!)
+        urlRequest.httpMethod = "GET"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(data)
+            exp.fulfill()
+        }).resume()
+        
+        waitForExpectations(timeout: configuration.timeoutIntervalForRequest, handler: nil)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPostRequest() {
+        let session = URLSession(configuration: configuration)
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        var urlRequest = URLRequest(url: URL(string: "https://httpbin.org/post")!)
+        urlRequest.httpMethod = "POST"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: ["key": "value"], options: .prettyPrinted)
+        
+        session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(data)
+            exp.fulfill()
+        }).resume()
+        
+        waitForExpectations(timeout: configuration.timeoutIntervalForRequest, handler: nil)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testPutRequest() {
+        let session = URLSession(configuration: configuration)
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        var urlRequest = URLRequest(url: URL(string: "https://httpbin.org/put")!)
+        urlRequest.httpMethod = "PUT"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: ["key": "value"], options: .prettyPrinted)
+        
+        session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(data)
+            exp.fulfill()
+        }).resume()
+        
+        waitForExpectations(timeout: configuration.timeoutIntervalForRequest, handler: nil)
     }
-    
 }

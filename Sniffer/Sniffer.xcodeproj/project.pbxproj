@@ -10,6 +10,10 @@
 		C30E56FB1E541B9200B4C345 /* Sniffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30E56F11E541B9200B4C345 /* Sniffer.framework */; };
 		C30E57001E541B9200B4C345 /* SnifferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E56FF1E541B9200B4C345 /* SnifferTests.swift */; };
 		C30E57021E541B9200B4C345 /* Sniffer.h in Headers */ = {isa = PBXBuildFile; fileRef = C30E56F41E541B9200B4C345 /* Sniffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C30E570D1E541BC900B4C345 /* Sniffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E570C1E541BC900B4C345 /* Sniffer.swift */; };
+		C30E570E1E5424BE00B4C345 /* Sniffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E570C1E541BC900B4C345 /* Sniffer.swift */; };
+		C356DDE51E555D6E00DF7467 /* BodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356DDE41E555D6E00DF7467 /* BodyDeserializer.swift */; };
+		C356DDE61E555FE500DF7467 /* BodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356DDE41E555D6E00DF7467 /* BodyDeserializer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +27,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43AA4FCCCB0E2B40D520FA8B /* Pods_Sniffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sniffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E1E01E2A4D9DEF0685763FD /* Pods-SnifferTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnifferTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnifferTests/Pods-SnifferTests.release.xcconfig"; sourceTree = "<group>"; };
+		987FCBEDD9BE7C35A2C04184 /* Pods_SnifferTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnifferTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AB14D53DD03F2910C49A54B /* Pods-Sniffer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sniffer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sniffer/Pods-Sniffer.debug.xcconfig"; sourceTree = "<group>"; };
 		C30E56F11E541B9200B4C345 /* Sniffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sniffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30E56F41E541B9200B4C345 /* Sniffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sniffer.h; sourceTree = "<group>"; };
 		C30E56F51E541B9200B4C345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C30E56FA1E541B9200B4C345 /* SnifferTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnifferTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30E56FF1E541B9200B4C345 /* SnifferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnifferTests.swift; sourceTree = "<group>"; };
 		C30E57011E541B9200B4C345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C30E570C1E541BC900B4C345 /* Sniffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sniffer.swift; sourceTree = "<group>"; };
+		C356DDE41E555D6E00DF7467 /* BodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyDeserializer.swift; sourceTree = "<group>"; };
+		EA2941A3518BBB1366BA61EB /* Pods-SnifferTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnifferTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnifferTests/Pods-SnifferTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F72D47C694CC1641E6C47660 /* Pods-Sniffer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sniffer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sniffer/Pods-Sniffer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,12 +62,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A80270559E75AB6E23C869D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9AB14D53DD03F2910C49A54B /* Pods-Sniffer.debug.xcconfig */,
+				F72D47C694CC1641E6C47660 /* Pods-Sniffer.release.xcconfig */,
+				EA2941A3518BBB1366BA61EB /* Pods-SnifferTests.debug.xcconfig */,
+				5E1E01E2A4D9DEF0685763FD /* Pods-SnifferTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BBC338B95C0E4433B5615C77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43AA4FCCCB0E2B40D520FA8B /* Pods_Sniffer.framework */,
+				987FCBEDD9BE7C35A2C04184 /* Pods_SnifferTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C30E56E71E541B9200B4C345 = {
 			isa = PBXGroup;
 			children = (
 				C30E56F31E541B9200B4C345 /* Sniffer */,
 				C30E56FE1E541B9200B4C345 /* SnifferTests */,
 				C30E56F21E541B9200B4C345 /* Products */,
+				A80270559E75AB6E23C869D1 /* Pods */,
+				BBC338B95C0E4433B5615C77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +105,7 @@
 		C30E56F31E541B9200B4C345 /* Sniffer */ = {
 			isa = PBXGroup;
 			children = (
+				C30E570B1E541BBD00B4C345 /* Classes */,
 				C30E56F41E541B9200B4C345 /* Sniffer.h */,
 				C30E56F51E541B9200B4C345 /* Info.plist */,
 			);
@@ -84,6 +119,15 @@
 				C30E57011E541B9200B4C345 /* Info.plist */,
 			);
 			path = SnifferTests;
+			sourceTree = "<group>";
+		};
+		C30E570B1E541BBD00B4C345 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C30E570C1E541BC900B4C345 /* Sniffer.swift */,
+				C356DDE41E555D6E00DF7467 /* BodyDeserializer.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +192,7 @@
 				TargetAttributes = {
 					C30E56F01E541B9200B4C345 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					C30E56F91E541B9200B4C345 = {
@@ -196,6 +241,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C356DDE51E555D6E00DF7467 /* BodyDeserializer.swift in Sources */,
+				C30E570D1E541BC900B4C345 /* Sniffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +251,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C30E57001E541B9200B4C345 /* SnifferTests.swift in Sources */,
+				C30E570E1E5424BE00B4C345 /* Sniffer.swift in Sources */,
+				C356DDE61E555FE500DF7467 /* BodyDeserializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +368,9 @@
 		};
 		C30E57061E541B9200B4C345 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AB14D53DD03F2910C49A54B /* Pods-Sniffer.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -327,17 +378,21 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sniffer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kofktu.Sniffer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		C30E57071E541B9200B4C345 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F72D47C694CC1641E6C47660 /* Pods-Sniffer.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -345,6 +400,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sniffer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kofktu.Sniffer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,7 +411,9 @@
 		};
 		C30E57091E541B9200B4C345 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA2941A3518BBB1366BA61EB /* Pods-SnifferTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SnifferTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kofktu.SnifferTests;
@@ -366,7 +424,9 @@
 		};
 		C30E570A1E541B9200B4C345 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E1E01E2A4D9DEF0685763FD /* Pods-SnifferTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SnifferTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kofktu.SnifferTests;
@@ -394,6 +454,7 @@
 				C30E57071E541B9200B4C345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C30E57081E541B9200B4C345 /* Build configuration list for PBXNativeTarget "SnifferTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +463,7 @@
 				C30E570A1E541B9200B4C345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
