@@ -25,7 +25,7 @@ pod "Sniffer"
 
 ## Usage
 
-for any requests you make via 'URLSession'
+#### for any requests you make via 'URLSession'
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -34,13 +34,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-for URLSessionConfigure
+#### for URLSessionConfigure
+
 ```swift
 let configuration = URLSessionConfiguration.default
 Sniffer.enable(in: configuration)
 ```
 
-for Custom Deserializer
+#### for Custom Deserializer
+
 ```swift
 public protocol BodyDeserializer {
     func deserialize(body: Data) -> String?
