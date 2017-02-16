@@ -1,7 +1,7 @@
 # Sniffer
 
-Automatic networking activity logger
-intercepting any outgoing requests and incoming responses for debugging purposes.
+- Automatic networking activity logger
+- intercepting any outgoing requests and incoming responses for debugging purposes.
 
 ![alt tag](Screenshot/Sample.png)
 
