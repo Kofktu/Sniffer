@@ -58,7 +58,7 @@ open class Sniffer: URLProtocol {
     
     override init(request: URLRequest, cachedResponse: CachedURLResponse?, client: URLProtocolClient?) {
         super.init(request: request, cachedResponse: cachedResponse, client: client)
-        session = URLSession(configuration: URLSessionConfiguration.ephemeral, delegate: self, delegateQueue: nil)
+        session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
     }
     
     open override func startLoading() {
