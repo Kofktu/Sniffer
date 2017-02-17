@@ -126,13 +126,16 @@ open class Sniffer: URLProtocol {
     }
     
     private func find(deserialize contentType: String) -> BodyDeserializer? {
-        let actualParts = contentType.components(separatedBy: "/")
-        guard actualParts.count == 2 else { return nil }
-        
         for (pattern, deserializer) in Sniffer.bodyDeserializers {
-            let patternParts = pattern.components(separatedBy: "/")
-            if ["*" , actualParts[0]].contains(patternParts[0]) && ["*" , actualParts[1]].contains(patternParts[1]) {
-                return deserializer
+            do {
+                let regex = try NSRegularExpression(pattern: pattern.replacingOccurrences(of: "*", with: "[a-z]+"))
+                let results = regex.matches(in: contentType, range: NSRange(location: 0, length: contentType.characters.count))
+                
+                if !results.isEmpty {
+                    return deserializer
+                }
+            } catch {
+                continue
             }
         }
         
