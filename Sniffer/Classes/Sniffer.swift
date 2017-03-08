@@ -14,6 +14,8 @@ open class Sniffer: URLProtocol {
         static let duration = "Sniffer.duration"
     }
     
+    static public var onLogger: ((String) -> Void)? // If the handler is registered, the log inside the Sniffer will not be output.
+    
     fileprivate var session: URLSession!
     fileprivate var urlTask: URLSessionDataTask?
     fileprivate var urlRequest: NSMutableURLRequest?
@@ -21,6 +23,7 @@ open class Sniffer: URLProtocol {
     fileprivate var data: Data?
     
     private static var bodyDeserializers: [String: BodyDeserializer] = [
+        "application/x-www-form-urlencoded": PlainTextBodyDeserializer(),
         "*/json": JSONBodyDeserializer(),
         "image/*": UIImageBodyDeserializer(),
         "text/plain": PlainTextBodyDeserializer(),
@@ -83,6 +86,14 @@ open class Sniffer: URLProtocol {
     }
     
     // MARK: - Private
+    private func log(_ string: String) {
+        if let _ = Sniffer.onLogger {
+            Sniffer.onLogger?(string)
+        } else {
+            print(string)
+        }
+    }
+    
     fileprivate func clear() {
         defer {
             urlTask = nil
@@ -98,17 +109,17 @@ open class Sniffer: URLProtocol {
     }
     
     fileprivate func logDivider() {
-        print("============================================================")
+        log("============================================================")
     }
     
     fileprivate func log(headers: [String: String]?) {
         guard let headers = headers, !headers.isEmpty else { return }
         
-        print("Headers: [")
+        log("Headers: [")
         for (key, value) in headers {
-            print("  \(key) : \(value)")
+            log("  \(key) : \(value)")
         }
-        print("]")
+        log("]")
     }
     
     private func body(from request: URLRequest) -> Data? {
@@ -150,9 +161,9 @@ open class Sniffer: URLProtocol {
         guard let body = body(from: request) else { return }
         
         if let deserialize = deserialize(body: body, for: request.value(forHTTPHeaderField: "Content-Type") ?? "application/octet-stream") {
-            print("Body: [")
-            print(deserialize)
-            print("]")
+            log("Body: [")
+            log(deserialize)
+            log("]")
         }
     }
     
@@ -160,7 +171,7 @@ open class Sniffer: URLProtocol {
         logDivider()
         
         if let method = request.httpMethod, let url = request.url?.absoluteString {
-            print("Request [\(method)] : \(url)")
+            log("Request [\(method)] : \(url)")
         }
         
         log(headers: request.allHTTPHeaderFields)
@@ -175,12 +186,12 @@ open class Sniffer: URLProtocol {
         var contentType = "application/octet-stream"
         
         if let url = response.url?.absoluteString {
-            print("Response : \(url)")
+            log("Response : \(url)")
         }
         
         if let httpResponse = response as? HTTPURLResponse {
             let localisedStatus = HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode).capitalized
-            print("Status: \(httpResponse.statusCode) - \(localisedStatus)")
+            log("Status: \(httpResponse.statusCode) - \(localisedStatus)")
             log(headers: httpResponse.allHeaderFields as? [String: String])
             
             if let type = httpResponse.allHeaderFields["Content-Type"] as? String {
@@ -190,7 +201,7 @@ open class Sniffer: URLProtocol {
         
         if let urlRequest = urlRequest as URLRequest?, let startDate = Sniffer.property(forKey: Keys.duration, in: urlRequest) as? Date {
             let difference = fabs(startDate.timeIntervalSinceNow)
-            print("Duration: \(difference)s")
+            log("Duration: \(difference)s")
         }
         
         defer {
@@ -200,29 +211,29 @@ open class Sniffer: URLProtocol {
         guard let body = data else { return }
         
         if let deserialize = deserialize(body: body, for: contentType) ?? PlainTextBodyDeserializer().deserialize(body: body) {
-            print("Body: [")
-            print(deserialize)
-            print("]")
+            log("Body: [")
+            log(deserialize)
+            log("]")
         }
     }
     
     fileprivate func log(error: Error?) {
         guard let error = error else { return }
         
-        print("=======================ERROR================================")
+        log("=======================ERROR================================")
         
         if let error = error as NSError? {
-            print("Code : \(error.code)")
-            print("Description : \(error.localizedDescription)")
+            log("Code : \(error.code)")
+            log("Description : \(error.localizedDescription)")
             
             if let reason = error.localizedFailureReason {
-                print("Reason : \(reason)")
+                log("Reason : \(reason)")
             }
             if let suggestion = error.localizedRecoverySuggestion {
-                print("Suggestion : \(suggestion)")
+                log("Suggestion : \(suggestion)")
             }
         } else {
-            print("Description : \(error.localizedDescription)")
+            log("Description : \(error.localizedDescription)")
         }
         
         logDivider()
