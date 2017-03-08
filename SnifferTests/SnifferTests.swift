@@ -16,6 +16,11 @@ class SnifferTests: XCTestCase {
     override func setUp() {
         super.setUp()
         Sniffer.enable(in: configuration)
+        
+//        Register the handler if you want the log to be handled directly by the application
+//        Sniffer.onLogger = { [unowned self] (log) in
+//            print(log)
+//        }
     }
     
     func testGetRequest() {
