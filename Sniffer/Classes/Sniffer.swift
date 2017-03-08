@@ -21,6 +21,7 @@ open class Sniffer: URLProtocol {
     fileprivate var data: Data?
     
     private static var bodyDeserializers: [String: BodyDeserializer] = [
+        "application/x-www-form-urlencoded": PlainTextBodyDeserializer(),
         "*/json": JSONBodyDeserializer(),
         "image/*": UIImageBodyDeserializer(),
         "text/plain": PlainTextBodyDeserializer(),
