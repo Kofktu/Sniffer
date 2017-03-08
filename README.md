@@ -59,6 +59,15 @@ Sniffer.register(deserializer: CustomTextBodyDeserializer(), for: ["text/plain"]
 
 ```
 
+#### If you want to process the logs directly in your application
+
+```swift
+// Register the handler if you want the log to be handled directly by the application
+Sniffer.onLogger = { [unowned self] (log) in
+  print(log)
+}
+```
+
 ## References
 - Timberjack (https://github.com/andysmart/Timberjack)
 - ResponseDetective (https://github.com/netguru/ResponseDetective)
