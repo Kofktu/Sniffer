@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Sniffer"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "Automatic network activity logger for Swift"
   s.homepage     = "https://github.com/Kofktu/Sniffer"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -55,13 +55,13 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "8.0"
+  # s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
-  # s.osx.deployment_target = "10.7"
-  # s.watchos.deployment_target = "2.0"
-  # s.tvos.deployment_target = "9.0"
+  s.ios.deployment_target = "8.0"
+  s.osx.deployment_target = "10.9"
+  s.watchos.deployment_target = "2.0"
+  s.tvos.deployment_target = "9.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -108,9 +108,14 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.frameworks = "Foundation", "UIKit"
+  s.frameworks = "Foundation"
   # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
+
+  s.ios.frameworks = "UIKit"
+  s.watchos.frameworks = "UIKit"
+  s.tvos.frameworks = "UIKit"
+  s.osx.frameworks = "AppKit"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
