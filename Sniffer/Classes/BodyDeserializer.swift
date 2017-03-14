@@ -8,9 +8,9 @@
 
 import Foundation
 
-#if os(iOS) || os(watchOS)
+#if os(iOS) || os(tvOS) || os(watchOS)
     import UIKit
-#else
+#elseif os(OSX)
     import AppKit
 #endif
 
@@ -49,10 +49,10 @@ public final class HTMLBodyDeserializer: BodyDeserializer {
 }
 
 public final class UIImageBodyDeserializer: BodyDeserializer {
-    #if os(iOS) || os(watchOS)
-    private typealias Image = UIImage
-    #else
-    private typealias Image = NSImage
+    #if os(iOS) || os(tvOS) || os(watchOS)
+        private typealias Image = UIImage
+    #elseif os(OSX)
+        private typealias Image = NSImage
     #endif
     
     public func deserialize(body: Data) -> String? {
