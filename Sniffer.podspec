@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Sniffer"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "Automatic network activity logger for Swift"
   s.homepage     = "https://github.com/Kofktu/Sniffer"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
