@@ -6,7 +6,7 @@
 ![alt tag](Screenshot/Sample.png)
 
 ## Requirements
-- iOS 8.0+
+- iOS 8.0+, macOS 10.9+, watchOS 2.0+, tvOS 9.0+
 - Swift 3.0
 
 ## Example
@@ -57,6 +57,15 @@ public final class CustomTextBodyDeserializer: BodyDeserializer {
 
 Sniffer.register(deserializer: CustomTextBodyDeserializer(), for: ["text/plain"])
 
+```
+
+#### If you want to process the logs directly in your application
+
+```swift
+// Register the handler if you want the log to be handled directly by the application
+Sniffer.onLogger = { [unowned self] (log) in
+  print(log)
+}
 ```
 
 ## References
