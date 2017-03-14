@@ -6,7 +6,7 @@
 ![alt tag](Screenshot/Sample.png)
 
 ## Requirements
-- iOS 8.0+
+- iOS 8.0+, macOS 10.9+, watchOS 2.0+, tvOS 9.0+
 - Swift 3.0
 
 ## Example
