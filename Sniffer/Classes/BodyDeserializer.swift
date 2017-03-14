@@ -7,7 +7,12 @@
 //
 
 import Foundation
-import UIKit
+
+#if os(iOS) || os(watchOS)
+    import UIKit
+#else
+    import AppKit
+#endif
 
 public protocol BodyDeserializer {
     func deserialize(body: Data) -> String?
@@ -44,7 +49,13 @@ public final class HTMLBodyDeserializer: BodyDeserializer {
 }
 
 public final class UIImageBodyDeserializer: BodyDeserializer {
+    #if os(iOS) || os(watchOS)
+    private typealias Image = UIImage
+    #else
+    private typealias Image = NSImage
+    #endif
+    
     public func deserialize(body: Data) -> String? {
-        return UIImage(data: body).map { "image = [ \(Int($0.size.width)) x \(Int($0.size.height)) ]" }
+        return Image(data: body).map { "image = [ \(Int($0.size.width)) x \(Int($0.size.height)) ]" }
     }
 }
