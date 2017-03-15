@@ -1,5 +1,7 @@
 # Sniffer
 
+[![Build Status](https://travis-ci.org/Kofktu/Sniffer.svg?branch=master)](https://travis-ci.org/Kofktu/Sniffer)
+
 - Automatic networking activity logger
 - intercepting any outgoing requests and incoming responses for debugging purposes.
 
