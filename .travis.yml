@@ -1,0 +1,17 @@
+os: osx
+osx_image: xcode8
+sudo: false
+language: objective-c
+
+env:
+  global:
+  - IOS_SDK=iphonesimulator10.0
+  - MACOS_SDK=macosx10.12
+  - TVOS_SDK=appletvsimulator10.0
+  - WATCHOS_SDK=watchsimulator3.0
+
+script:
+  - xcodebuild clean build -sdk $SDK -configuration Debug CODE_SIGN_IDENTITY=\"\" CODE_SIGNING_REQUIRED=NO
+
+before_install:
+  - xcodebuild -showsdks
