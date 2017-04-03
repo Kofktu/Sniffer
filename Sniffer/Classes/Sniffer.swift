@@ -221,19 +221,16 @@ open class Sniffer: URLProtocol {
         guard let error = error else { return }
         
         log("=======================ERROR================================")
+        let nsError = error as NSError
+
+        log("Code : \(nsError.code)")
+        log("Description : \(nsError.localizedDescription)")
         
-        if let error = error as NSError? {
-            log("Code : \(error.code)")
-            log("Description : \(error.localizedDescription)")
-            
-            if let reason = error.localizedFailureReason {
-                log("Reason : \(reason)")
-            }
-            if let suggestion = error.localizedRecoverySuggestion {
-                log("Suggestion : \(suggestion)")
-            }
-        } else {
-            log("Description : \(error.localizedDescription)")
+        if let reason = nsError.localizedFailureReason {
+            log("Reason : \(reason)")
+        }
+        if let suggestion = nsError.localizedRecoverySuggestion {
+            log("Suggestion : \(suggestion)")
         }
         
         logDivider()
