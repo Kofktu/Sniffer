@@ -52,6 +52,12 @@ let configuration = URLSessionConfiguration.default
 Sniffer.enable(in: configuration)
 ```
 
+#### Alamofire
+
+```swift
+Sniffer.enable(in: Alamofire.SessionManager.default.session.configuration)
+```
+
 #### for Custom Deserializer
 
 ```swift
@@ -74,7 +80,7 @@ Sniffer.register(deserializer: CustomTextBodyDeserializer(), for: ["text/plain"]
 
 ```swift
 // Register the handler if you want the log to be handled directly by the application
-Sniffer.onLogger = { [unowned self] (log) in
+Sniffer.onLogger = { (log) in
   print(log)
 }
 ```
