@@ -52,7 +52,7 @@ let configuration = URLSessionConfiguration.default
 Sniffer.enable(in: configuration)
 ```
 
-#### Alamofire
+#### for Alamofire
 
 ```swift
 Sniffer.enable(in: Alamofire.SessionManager.default.session.configuration)
