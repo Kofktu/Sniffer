@@ -52,12 +52,6 @@ let configuration = URLSessionConfiguration.default
 Sniffer.enable(in: configuration)
 ```
 
-#### for Alamofire
-
-```swift
-Sniffer.enable(in: Alamofire.SessionManager.default.session.configuration)
-```
-
 #### for Custom Deserializer
 
 ```swift
