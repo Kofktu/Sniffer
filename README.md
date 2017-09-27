@@ -12,7 +12,8 @@
 
 ## Requirements
 - iOS 8.0+, macOS 10.9+, watchOS 2.0+, tvOS 9.0+
-- Swift 3.0
+- Swift 4.0
+- Swift 3.0 ([1.0.6](https://github.com/Kofktu/Sniffer/tree/1.0.6))
 
 ## Example
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
