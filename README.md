@@ -1,6 +1,9 @@
 # Sniffer
 
 [![Build Status](https://travis-ci.org/Kofktu/Sniffer.svg?branch=master)](https://travis-ci.org/Kofktu/Sniffer)
+![Swift](https://img.shields.io/badge/Swift-4.0-orange.svg)
+[![CocoaPods](http://img.shields.io/cocoapods/v/Sniffer.svg?style=flat)](http://cocoapods.org/?q=name%3ASniffer%20author%3AKofktu)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 - Automatic networking activity logger
 - intercepting any outgoing requests and incoming responses for debugging purposes.
@@ -72,7 +75,7 @@ Sniffer.register(deserializer: CustomTextBodyDeserializer(), for: ["text/plain"]
 
 ```swift
 // Register the handler if you want the log to be handled directly by the application
-Sniffer.onLogger = { [unowned self] (log) in
+Sniffer.onLogger = { (log) in
   print(log)
 }
 ```
