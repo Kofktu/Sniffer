@@ -28,9 +28,7 @@
 
 /* Begin PBXFileReference section */
 		43AA4FCCCB0E2B40D520FA8B /* Pods_Sniffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sniffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E1E01E2A4D9DEF0685763FD /* Pods-SnifferTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnifferTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnifferTests/Pods-SnifferTests.release.xcconfig"; sourceTree = "<group>"; };
 		987FCBEDD9BE7C35A2C04184 /* Pods_SnifferTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnifferTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9AB14D53DD03F2910C49A54B /* Pods-Sniffer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sniffer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sniffer/Pods-Sniffer.debug.xcconfig"; sourceTree = "<group>"; };
 		C30E56F11E541B9200B4C345 /* Sniffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sniffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30E56F41E541B9200B4C345 /* Sniffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sniffer.h; sourceTree = "<group>"; };
 		C30E56F51E541B9200B4C345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,8 +37,6 @@
 		C30E57011E541B9200B4C345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C30E570C1E541BC900B4C345 /* Sniffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sniffer.swift; sourceTree = "<group>"; };
 		C356DDE41E555D6E00DF7467 /* BodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyDeserializer.swift; sourceTree = "<group>"; };
-		EA2941A3518BBB1366BA61EB /* Pods-SnifferTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnifferTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnifferTests/Pods-SnifferTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F72D47C694CC1641E6C47660 /* Pods-Sniffer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sniffer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sniffer/Pods-Sniffer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,17 +58,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A80270559E75AB6E23C869D1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9AB14D53DD03F2910C49A54B /* Pods-Sniffer.debug.xcconfig */,
-				F72D47C694CC1641E6C47660 /* Pods-Sniffer.release.xcconfig */,
-				EA2941A3518BBB1366BA61EB /* Pods-SnifferTests.debug.xcconfig */,
-				5E1E01E2A4D9DEF0685763FD /* Pods-SnifferTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		BBC338B95C0E4433B5615C77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +73,6 @@
 				C30E56F31E541B9200B4C345 /* Sniffer */,
 				C30E56FE1E541B9200B4C345 /* SnifferTests */,
 				C30E56F21E541B9200B4C345 /* Products */,
-				A80270559E75AB6E23C869D1 /* Pods */,
 				BBC338B95C0E4433B5615C77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -368,7 +352,6 @@
 		};
 		C30E57061E541B9200B4C345 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AB14D53DD03F2910C49A54B /* Pods-Sniffer.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -384,13 +367,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		C30E57071E541B9200B4C345 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F72D47C694CC1641E6C47660 /* Pods-Sniffer.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -405,33 +387,31 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kofktu.Sniffer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 		C30E57091E541B9200B4C345 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA2941A3518BBB1366BA61EB /* Pods-SnifferTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SnifferTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kofktu.SnifferTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		C30E570A1E541B9200B4C345 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E1E01E2A4D9DEF0685763FD /* Pods-SnifferTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = SnifferTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kofktu.SnifferTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

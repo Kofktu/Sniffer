@@ -8,19 +8,21 @@
 
 import Foundation
 
-open class Sniffer: URLProtocol {
-    enum Keys {
+public class Sniffer: URLProtocol {
+    
+    private enum Keys {
         static let request = "Sniffer.request"
         static let duration = "Sniffer.duration"
     }
     
     static public var onLogger: ((String) -> Void)? // If the handler is registered, the log inside the Sniffer will not be output.
     
-    fileprivate var session: URLSession!
-    fileprivate var urlTask: URLSessionDataTask?
-    fileprivate var urlRequest: NSMutableURLRequest?
-    fileprivate var urlResponse: HTTPURLResponse?
-    fileprivate var data: Data?
+    private lazy var session: URLSession = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
+    private var urlTask: URLSessionDataTask?
+    private var urlRequest: NSMutableURLRequest?
+    private var urlResponse: HTTPURLResponse?
+    private var data: Data?
+    private let serialQueue = DispatchQueue(label: "com.kofktu.sniffer.serialQueue")
     
     private static var bodyDeserializers: [String: BodyDeserializer] = [
         "application/x-www-form-urlencoded": PlainTextBodyDeserializer(),
@@ -59,11 +61,6 @@ open class Sniffer: URLProtocol {
         return request
     }
     
-    override init(request: URLRequest, cachedResponse: CachedURLResponse?, client: URLProtocolClient?) {
-        super.init(request: request, cachedResponse: cachedResponse, client: client)
-        session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
-    }
-    
     open override func startLoading() {
         if let _ = urlTask { return }
         guard let urlRequest = (request as NSURLRequest).mutableCopy() as? NSMutableURLRequest , self.urlRequest == nil else { return }
@@ -80,9 +77,11 @@ open class Sniffer: URLProtocol {
     }
     
     open override func stopLoading() {
-        urlTask?.cancel()
-        urlTask = nil
-        session.invalidateAndCancel()
+        serialQueue.sync { [weak self] in
+            self?.urlTask?.cancel()
+            self?.urlTask = nil
+            self?.session.invalidateAndCancel()
+        }
     }
     
     // MARK: - Private
@@ -140,7 +139,7 @@ open class Sniffer: URLProtocol {
         for (pattern, deserializer) in Sniffer.bodyDeserializers {
             do {
                 let regex = try NSRegularExpression(pattern: pattern.replacingOccurrences(of: "*", with: "[a-z]+"))
-                let results = regex.matches(in: contentType, range: NSRange(location: 0, length: contentType.characters.count))
+                let results = regex.matches(in: contentType, range: NSRange(location: 0, length: contentType.count))
                 
                 if !results.isEmpty {
                     return deserializer
@@ -266,7 +265,9 @@ extension Sniffer: URLSessionTaskDelegate, URLSessionDataDelegate {
             client?.urlProtocolDidFinishLoading(self)
         }
         
-        clear()
+        serialQueue.sync { [weak self] in
+            self?.clear()
+        }
         session.finishTasksAndInvalidate()
     }
     
