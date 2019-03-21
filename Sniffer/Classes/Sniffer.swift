@@ -15,8 +15,9 @@ public class Sniffer: URLProtocol {
         static let duration = "Sniffer.duration"
     }
 
-    static public var onLogger: ((String) -> Void)? // If the handler is registered, the log inside the Sniffer will not be output.
-
+    static public var onLogger: ((URL, String) -> Void)? // If the handler is registered, the log inside the Sniffer will not be output.
+    static private var ignoreDomains: [String]?
+    
     private lazy var session: URLSession = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
     private var urlTask: URLSessionDataTask?
     private var urlRequest: NSMutableURLRequest?
@@ -43,22 +44,35 @@ public class Sniffer: URLProtocol {
     public class func enable(in configuration: URLSessionConfiguration) {
         configuration.protocolClasses?.insert(Sniffer.self, at: 0)
     }
-
+    
     public class func register(deserializer: BodyDeserializer, `for` contentTypes: [String]) {
         for contentType in contentTypes {
             guard contentType.components(separatedBy: "/").count == 2 else { continue }
             bodyDeserializers[contentType] = deserializer
         }
     }
+    
+    public class func ignore(domains: [String]) {
+        ignoreDomains = domains
+    }
 
     // MARK: - URLProtocol
     open override class func canInit(with request: URLRequest) -> Bool {
         guard let url = request.url, let scheme = url.scheme else { return false }
+        guard !isIgnore(with: url) else { return false }
         return ["http", "https"].contains(scheme) && self.property(forKey: Keys.request, in: request)  == nil
     }
 
     open override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
+    }
+    
+    private class func isIgnore(with url: URL) -> Bool {
+        guard let ignoreDomains = ignoreDomains, !ignoreDomains.isEmpty,
+            let host = url.host else {
+            return false
+        }
+        return ignoreDomains.first { $0.range(of: host) != nil } != nil
     }
 
     open override func startLoading() {
@@ -88,7 +102,9 @@ public class Sniffer: URLProtocol {
 
     private func log(_ string: String) {
         if let _ = Sniffer.onLogger {
-            Sniffer.onLogger?(string)
+            urlRequest?.url.flatMap {
+                Sniffer.onLogger?($0, string)
+            }
         } else {
             print(string)
         }
