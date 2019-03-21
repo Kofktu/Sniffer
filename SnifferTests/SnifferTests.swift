@@ -18,7 +18,8 @@ class SnifferTests: XCTestCase {
         Sniffer.enable(in: configuration)
         
 //        Register the handler if you want the log to be handled directly by the application
-//        Sniffer.onLogger = { [unowned self] (log) in
+//        Sniffer.onLogger = { (url, log) in
+//            print(url)
 //            print(log)
 //        }
     }
@@ -58,6 +59,26 @@ class SnifferTests: XCTestCase {
     }
     
     func testPutRequest() {
+        let session = URLSession(configuration: configuration)
+        let exp = expectation(description: "\(#function)\(#line)")
+        
+        var urlRequest = URLRequest(url: URL(string: "https://httpbin.org/put")!)
+        urlRequest.httpMethod = "PUT"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = try? JSONSerialization.data(withJSONObject: ["key": "value"], options: .prettyPrinted)
+        
+        session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(data)
+            exp.fulfill()
+        }).resume()
+        
+        waitForExpectations(timeout: configuration.timeoutIntervalForRequest, handler: nil)
+    }
+    
+    func testIgnoreDomainRequest() {
+        Sniffer.ignore(domains: ["httpbin.org"])
+        
         let session = URLSession(configuration: configuration)
         let exp = expectation(description: "\(#function)\(#line)")
         
