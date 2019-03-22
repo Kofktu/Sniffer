@@ -81,6 +81,11 @@ Sniffer.onLogger = { (log) in
 }
 ```
 
+#### If you want to ignore domains
+```swift
+Sniffer.ignore(domains: ["github.com"])
+```
+
 ## References
 - Timberjack (https://github.com/andysmart/Timberjack)
 - ResponseDetective (https://github.com/netguru/ResponseDetective)
