@@ -76,8 +76,8 @@ Sniffer.register(deserializer: CustomTextBodyDeserializer(), for: ["text/plain"]
 
 ```swift
 // Register the handler if you want the log to be handled directly by the application
-Sniffer.onLogger = { (log) in
-  print(log)
+Sniffer.onLogger = { (url, log) in
+  print("\(url) : \(log)")
 }
 ```
 
