@@ -1,7 +1,7 @@
 # Sniffer
 
 [![Build Status](https://travis-ci.org/Kofktu/Sniffer.svg?branch=master)](https://travis-ci.org/Kofktu/Sniffer)
-![Swift](https://img.shields.io/badge/Swift-4.0-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
 [![CocoaPods](http://img.shields.io/cocoapods/v/Sniffer.svg?style=flat)](http://cocoapods.org/?q=name%3ASniffer%20author%3AKofktu)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -12,7 +12,8 @@
 
 ## Requirements
 - iOS 8.0+, macOS 10.9+, watchOS 2.0+, tvOS 9.0+
-- Swift 4.2
+- Swift 5.0
+- Swift 4.2 ([1.7.0](https://github.com/Kofktu/Sniffer/tree/1.7.0))
 - Swift 4.0 ([1.5.0](https://github.com/Kofktu/Sniffer/tree/1.5.0))
 - Swift 3.0 ([1.0.6](https://github.com/Kofktu/Sniffer/tree/1.0.6))
 
@@ -26,7 +27,7 @@ Sniffer is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "Sniffer"
+pod "Sniffer", '~> 2.0'
 ```
 
 #### Carthage
