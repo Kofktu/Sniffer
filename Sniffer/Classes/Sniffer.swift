@@ -30,7 +30,8 @@ public class Sniffer: URLProtocol {
         "*/json": JSONBodyDeserializer(),
         "image/*": UIImageBodyDeserializer(),
         "text/plain": PlainTextBodyDeserializer(),
-        "*/html": HTMLBodyDeserializer()
+        "*/html": HTMLBodyDeserializer(),
+        "multipart/form-data; boundary=*": MultipartFormDataDeserializer()
     ]
 
     public class func register() {
