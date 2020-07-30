@@ -55,6 +55,23 @@ public class Sniffer: URLProtocol {
     public class func ignore(domains: [String]) {
         ignoreDomains = domains
     }
+    
+    static func find(deserialize contentType: String) -> BodyDeserializer? {
+        for (pattern, deserializer) in Sniffer.bodyDeserializers {
+            do {
+                let regex = try NSRegularExpression(pattern: pattern.replacingOccurrences(of: "*", with: "[a-z]+"))
+                let results = regex.matches(in: contentType, range: NSRange(location: 0, length: contentType.count))
+
+                if !results.isEmpty {
+                    return deserializer
+                }
+            } catch {
+                continue
+            }
+        }
+
+        return nil
+    }
 
     // MARK: - URLProtocol
     open override class func canInit(with request: URLRequest) -> Bool {
@@ -158,25 +175,8 @@ public class Sniffer: URLProtocol {
         }
     }
 
-    private func find(deserialize contentType: String) -> BodyDeserializer? {
-        for (pattern, deserializer) in Sniffer.bodyDeserializers {
-            do {
-                let regex = try NSRegularExpression(pattern: pattern.replacingOccurrences(of: "*", with: "[a-z]+"))
-                let results = regex.matches(in: contentType, range: NSRange(location: 0, length: contentType.count))
-
-                if !results.isEmpty {
-                    return deserializer
-                }
-            } catch {
-                continue
-            }
-        }
-
-        return nil
-    }
-
     private func deserialize(body: Data, `for` contentType: String) -> String? {
-        return find(deserialize: contentType)?.deserialize(body: body)
+        return Self.find(deserialize: contentType)?.deserialize(body: body)
     }
 
     fileprivate func log(body request: URLRequest) -> String {

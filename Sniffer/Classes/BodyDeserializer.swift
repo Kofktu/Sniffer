@@ -63,3 +63,81 @@ public final class UIImageBodyDeserializer: BodyDeserializer {
         return Image(data: body).map { "image = [ \(Int($0.size.width)) x \(Int($0.size.height)) ]" }
     }
 }
+
+public final class MultipartFormDataDeserializer: BodyDeserializer {
+    
+    public func deserialize(body: Data) -> String? {
+        guard let comps = String(data: body, encoding: .ascii)?.components(separatedBy: "\r\n") else {
+            return nil
+        }
+        
+        let boundary = comps[0]
+        var values: [String] = []
+        var formDatas: [MultipartFormData] = []
+        
+        for comp in comps {
+            if comp.hasPrefix(boundary) {
+                if values.isEmpty == false {
+                    formDatas.append(MultipartFormData(comps: values))
+                }
+                
+                values.removeAll()
+            }
+            
+            values.append(comp)
+        }
+        
+        return formDatas.map { $0.result }.joined(separator: "\n")
+    }
+    
+}
+
+private struct MultipartFormData {
+    
+    /**
+     [0]    String    "--alamofire.boundary.3199e7165559519a"
+     [1]    String    "Content-Disposition: form-data; name=\"fileURL\"; filename=\"icon.png\""
+     [2]    String    "Content-Type: image/png"
+     [3]    String    ""
+     [4]    String    "\u{c2}PNG"
+     [5]    String    "[Data]"
+     [12]    String    "--alamofire.boundary.3199e7165559519a"
+     [13]    String    "Content-Disposition: form-data; name=\"intValue\""
+     [14]    String    "Content-Type: text/plain"
+     [15]    String    ""
+     [16]    String    "7"
+     */
+    var result: String {
+        var result = comps.filter { canAppended($0) || $0.isEmpty }
+        if isSupportType == false {
+            result.append("[ Raw Data ]")
+        }
+        return result.joined(separator: "\n")
+    }
+    
+    private let comps: [String]
+    private var type: String? {
+        comps.first { $0.hasPrefix("Content-Type") }?
+            .replacingOccurrences(of: "Content-Type: ", with: "")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    private var isSupportType: Bool {
+        guard let type = type,
+            let deserializer = Sniffer.find(deserialize: type) else {
+            return false
+        }
+        
+        return (deserializer is UIImageBodyDeserializer) == false
+    }
+    
+    init(comps: [String]) {
+        self.comps = comps
+    }
+    
+    // MARK: - Private
+    private func canAppended(_ component: String) -> Bool {
+        component.hasPrefix(comps[0]) || component.hasPrefix("Content-") ||
+            (component.isEmpty == false && isSupportType)
+    }
+    
+}
