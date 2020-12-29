@@ -12,8 +12,10 @@
 		C30E57021E541B9200B4C345 /* Sniffer.h in Headers */ = {isa = PBXBuildFile; fileRef = C30E56F41E541B9200B4C345 /* Sniffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C30E570D1E541BC900B4C345 /* Sniffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E570C1E541BC900B4C345 /* Sniffer.swift */; };
 		C30E570E1E5424BE00B4C345 /* Sniffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E570C1E541BC900B4C345 /* Sniffer.swift */; };
+		C3124464259AC583009A7ECD /* HTTPLogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3124463259AC583009A7ECD /* HTTPLogItem.swift */; };
 		C356DDE51E555D6E00DF7467 /* BodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356DDE41E555D6E00DF7467 /* BodyDeserializer.swift */; };
 		C356DDE61E555FE500DF7467 /* BodyDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C356DDE41E555D6E00DF7467 /* BodyDeserializer.swift */; };
+		C36AADDF259AD85C00B13544 /* HTTPLogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3124463259AC583009A7ECD /* HTTPLogItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 		C30E56FF1E541B9200B4C345 /* SnifferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnifferTests.swift; sourceTree = "<group>"; };
 		C30E57011E541B9200B4C345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C30E570C1E541BC900B4C345 /* Sniffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sniffer.swift; sourceTree = "<group>"; };
+		C3124463259AC583009A7ECD /* HTTPLogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPLogItem.swift; sourceTree = "<group>"; };
 		C356DDE41E555D6E00DF7467 /* BodyDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyDeserializer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				C30E570C1E541BC900B4C345 /* Sniffer.swift */,
+				C3124463259AC583009A7ECD /* HTTPLogItem.swift */,
 				C356DDE41E555D6E00DF7467 /* BodyDeserializer.swift */,
 			);
 			path = Classes;
@@ -227,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C356DDE51E555D6E00DF7467 /* BodyDeserializer.swift in Sources */,
+				C3124464259AC583009A7ECD /* HTTPLogItem.swift in Sources */,
 				C30E570D1E541BC900B4C345 /* Sniffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C30E57001E541B9200B4C345 /* SnifferTests.swift in Sources */,
+				C36AADDF259AD85C00B13544 /* HTTPLogItem.swift in Sources */,
 				C30E570E1E5424BE00B4C345 /* Sniffer.swift in Sources */,
 				C356DDE61E555FE500DF7467 /* BodyDeserializer.swift in Sources */,
 			);
