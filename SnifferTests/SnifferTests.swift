@@ -18,8 +18,9 @@ class SnifferTests: XCTestCase {
         Sniffer.enable(in: configuration)
         
 //        Register the handler if you want the log to be handled directly by the application
-//        Sniffer.onLogger = { (url, log) in
+//        Sniffer.onLogger = { url, type, log in
 //            print(url)
+//            print(type)
 //            print(log)
 //        }
     }

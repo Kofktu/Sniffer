@@ -2,8 +2,10 @@
 
 [![Build Status](https://travis-ci.org/Kofktu/Sniffer.svg?branch=master)](https://travis-ci.org/Kofktu/Sniffer)
 ![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
+[![Platform](http://img.shields.io/cocoapods/p/SDWebImage.svg?style=flat)](http://cocoadocs.org/docsets/SDWebImage/)
 [![CocoaPods](http://img.shields.io/cocoapods/v/Sniffer.svg?style=flat)](http://cocoapods.org/?q=name%3ASniffer%20author%3AKofktu)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg)](https://swift.org/package-manager/)
 
 - Automatic networking activity logger
 - intercepting any outgoing requests and incoming responses for debugging purposes.
